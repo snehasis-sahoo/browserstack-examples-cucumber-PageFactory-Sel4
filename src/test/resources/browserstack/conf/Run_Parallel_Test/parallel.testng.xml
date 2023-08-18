@@ -11,22 +11,4 @@
             <class name="Runner.CucumberTest"/>
         </classes>
     </test>
-    <test name="BSTestEnv2">
-        <parameter name="environment" value="env2"/>
-        <classes>
-            <class name="Runner.CucumberTest"/>
-        </classes>
-    </test>
-    <test name="BSTestEnv3">
-        <parameter name="environment" value="env3"/>
-        <classes>
-            <class name="Runner.CucumberTest"/>
-        </classes>
-    </test>
-    <test name="BSTestEnv4">
-        <parameter name="environment" value="env4"/>
-        <classes>
-            <class name="Runner.CucumberTest"/>
-        </classes>
-    </test>
 </suite>
