@@ -120,7 +120,8 @@ public class CucumberTest {
 
        @AfterClass(alwaysRun = true)
        public void tearDownClass() {
-              testNGCucumberRunner.finish();
+              //testNGCucumberRunner.finish(); //Conflict with the SDK   Runner.CucumberTest.tearDownClass
+              // NoSuchMethod org.yaml.snakeyaml.constructor.Constructor.<init>
        }
        @AfterSuite
        public void shutLocal() throws Exception {

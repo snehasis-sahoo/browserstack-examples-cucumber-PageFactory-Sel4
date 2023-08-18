@@ -76,11 +76,11 @@
             <version>5.0.0-alpha.10</version>
         </dependency>
         <dependency>
-      <groupId>com.browserstack</groupId>
-      <artifactId>browserstack-java-sdk</artifactId>
-      <version>LATEST</version>
-      <scope>compile</scope>
-    </dependency>
+          <groupId>com.browserstack</groupId>
+          <artifactId>browserstack-java-sdk</artifactId>
+          <version>LATEST</version>
+          <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -130,26 +130,11 @@
             </properties>
         </profile>
         <profile>
-            <id>suite-cross-bs</id>
-            <properties>
-                <browser-type>remote</browser-type>
-                <suiteXmlFile>src/test/resources/browserstack/conf/Run_Parallel_Test/parallel.testng.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
             <id>local-bs</id>
             <properties>
                 <browser-type>remote</browser-type>
                 <Application_url>http://localhost:3000/</Application_url>
-                <suiteXmlFile>src/test/resources/browserstack/conf/Run_Local_Test/local.testng.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>local-cross-bs</id>
-            <properties>
-                <browser-type>remote</browser-type>
-                <Application_url>http://localhost:3000/</Application_url>
-                <suiteXmlFile>src/test/resources/browserstack/conf/Run_Local_Parallel/localParallel.testng.xml</suiteXmlFile>
+                <suiteXmlFile>src/test/resources/browserstack/conf/Run_Parallel_Test/parallel.testng.xml</suiteXmlFile>
             </properties>
         </profile>
     </profiles>

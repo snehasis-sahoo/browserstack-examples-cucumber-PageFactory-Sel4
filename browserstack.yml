@@ -38,6 +38,8 @@ platforms:
   - deviceName: Samsung Galaxy S22 Ultra
     browserName: chrome # Try 'samsung' for Samsung browser
     osVersion: 12.0
+  - deviceName: iPhone 13 Pro Max
+    osVersion: 15
 
 # =======================
 # Parallels per Platform
@@ -49,8 +51,8 @@ platforms:
 #
 # Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
 parallelsPerPlatform: 1
-
-source: java:intellij:v1.1.2
+framework: cucumber-testng #junit,testng,java,cucumber-testng,serenity,cucumber-junit
+source: cucumber-testng:intellij:v1.1.2
 staticWebDriver: true
 # ==========================================
 # BrowserStack Local
@@ -58,7 +60,7 @@ staticWebDriver: true
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: false # <boolean> (Default false)
+browserstackLocal: true # <boolean> (Default false)
 
 # Options to be passed to BrowserStack local in-case of advanced configurations
 # browserStackLocalOptions:
@@ -73,3 +75,7 @@ debug: false # <boolean> # Set to true if you need screenshots for every seleniu
 networkLogs: false # <boolean> Set to true to enable HAR logs capturing
 consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
+
+# Test Observability is an intelligent test reporting & debugging product. It collects data using the SDK. Read more about what data is collected at https://www.browserstack.com/docs/test-observability/references/terms-and-conditions
+# Visit observability.browserstack.com to see your test reports and insights. To disable test observability, specify `testObservability: false` in the key below.
+testObservability: true
