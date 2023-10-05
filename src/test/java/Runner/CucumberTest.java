@@ -109,8 +109,8 @@ public class CucumberTest {
        @Test(dataProvider = "scenarios")
        public void scenario(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) throws MalformedURLException {
               JavascriptExecutor jse = (JavascriptExecutor)getDriver();
-              if(System.getProperty("browser-type").equalsIgnoreCase("remote"))
-              jse.executeScript("browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"name\":\" "+       pickleWrapper.getPickle().getName()   +" \" }}");
+              //if(System.getProperty("browser-type").equalsIgnoreCase("remote"))
+              //jse.executeScript("browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"name\":\" "+       pickleWrapper.getPickle().getName()   +" \" }}");
               testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
            }
        @DataProvider(parallel = true)
