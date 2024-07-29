@@ -28,8 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @CucumberOptions(features = "src/test/resources/Features", glue = {"StepDefinitions"},
-        plugin = {"pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        plugin = {"pretty","json:target/cucumber-reports/Cucumber.json"
+                //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
         monochrome = true
        )
 @Listeners(BrowserstackTestStatusListener.class)
