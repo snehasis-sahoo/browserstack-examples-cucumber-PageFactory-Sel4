@@ -48,6 +48,11 @@ public class E2ESteps {
             hooks.driver.get(System.getProperties().getProperty("Application_url").replaceAll("localhost","bs-local.com"));
         else
             hooks.driver.get(System.getProperties().getProperty("Application_url"));
+
+        jse.executeScript("browserstack_executor: {\"action\":\"lighthouseAudit\",\"arguments\":{\"url\":\""+hooks.driver.getCurrentUrl()+"\",\"executorOutput\":\"json\"}}");
+
+        jse.executeScript("browserstack_executor: {\"action\":\"lighthouseAudit\",\"arguments\":{\"url\":\""+hooks.driver.getCurrentUrl()+"\",\"assertResult\":{\"categories\":{\"performance\":40,\"best-practices\":50},\"metrics\":{\"first-contentful-paint\":{\"moreThan\":50,\"metricUnit\":\"score\"},\"largest-contentful-paint\":{\"lessThan\":4000,\"metricUnit\":\"numeric\"},\"total-blocking-time\":{\"lessThan\":600,\"metricUnit\":\"numeric\"},\"cumulative-layout-shift\":{\"moreThan\":50,\"metricUnit\":\"score\"}}}}}");
+
     }
     @When("User clicks on sign in link")
     public void user_clicks_on_sign_in_link() {

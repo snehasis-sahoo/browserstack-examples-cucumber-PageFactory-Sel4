@@ -11,7 +11,7 @@ public class BrowserstackTestStatusListener implements ITestListener {
     private void markTestStatus(String status, String reason, WebDriver driver) {
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            //jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"" + status + "\", \"reason\": \"" + reason + "\"}}");
+            jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"" + status + "\", \"reason\": \"" + reason + "\"}}");
         } catch (Exception e) {
             System.out.print("Error executing javascript" + e);
         }
