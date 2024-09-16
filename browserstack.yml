@@ -38,12 +38,13 @@ platforms:
     browserName: Edge
     browserVersion: latest
     accessibility: false
-  - deviceName: Samsung Galaxy S22 Ultra
+  - deviceName: Samsung Galaxy S2*
     browserName: chrome # Try 'samsung' for Samsung browser
-    osVersion: 12.0
+    osVersion: [12131415]
     accessibility: false
-  - deviceName: iPhone 13 Pro Max
-    osVersion: 15
+  - deviceName: iPhone 1* 
+    browserName: safari
+    osVersion: [15161718]
     accessibility: false
 # =======================
 # Parallels per Platform
@@ -68,7 +69,7 @@ browserstackAutomation: true
 browserstackLocal: false # <boolean> (Default false)
 
 # Options to be passed to BrowserStack local in-case of advanced configurations
-browserStackLocalOptions:
+#browserStackLocalOptions:
   # localIdentifier: # <string> (Default: null) Needed if you need to run multiple instances of local.
   # forceLocal: false  # <boolean> (Default: false) Set to true if you need to resolve all your traffic via BrowserStack Local tunnel.
   # Entire list of arguments available here -> https://www.browserstack.com/docs/automate/selenium/manage-incoming-connections
@@ -96,3 +97,4 @@ accessibilityOptions:
 performance: assert
 percy: true
 percyCaptureMode: auto
+#logLevel: debug

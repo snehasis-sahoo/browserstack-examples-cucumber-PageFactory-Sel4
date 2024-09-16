@@ -31,7 +31,7 @@ import java.util.Map;
         plugin = {"pretty","json:target/cucumber-reports/Cucumber.json"
                 //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        monochrome = true
+        monochrome = true,publish = true
        )
 @Listeners(BrowserstackTestStatusListener.class)
 public class CucumberTest {
@@ -99,8 +99,15 @@ public class CucumberTest {
                              new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities));
               }else
                      throw new AssertionError("Invalid input for browser");
-              if(!capabilities.toString().contains("realMobile"))
+              Map<String,String> deviceInfo = new HashMap<>();
+              JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+              try{
+                     deviceInfo = (Map<String, String>) jse.executeScript("mobile:deviceInfo");
+              }catch(Exception e){
+              }
+              if(deviceInfo.isEmpty())
                      getDriver().manage().window().maximize();
+
        }
 
        public static synchronized WebDriver getDriver(){
