@@ -95,3 +95,6 @@ performance: assert
 percy: true
 percyCaptureMode: auto
 #logLevel: debug
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'Prod'
